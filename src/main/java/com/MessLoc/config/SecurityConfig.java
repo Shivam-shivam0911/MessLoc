@@ -75,6 +75,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         // Public auth endpoints
                         .requestMatchers("/api/auth/**").permitAll()
+                        // Public mess endpoints
+                        .requestMatchers("/api/messes/**").permitAll()
 
                         // Role-specific protected endpoints
                         .requestMatchers("/api/user/**").hasRole("USER")
